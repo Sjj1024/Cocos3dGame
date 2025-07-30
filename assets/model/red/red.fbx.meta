@@ -1,0 +1,143 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "be593d30-3bf1-4396-9dd2-953975efdb74",
+  "files": [],
+  "subMetas": {
+    "fa0d6": {
+      "importer": "gltf-mesh",
+      "uuid": "be593d30-3bf1-4396-9dd2-953975efdb74@fa0d6",
+      "displayName": "",
+      "id": "fa0d6",
+      "name": "立方体.003.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "be593d30-3bf1-4396-9dd2-953975efdb74@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/model/red/运动场-红色块.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "dd992": {
+      "importer": "gltf-material",
+      "uuid": "be593d30-3bf1-4396-9dd2-953975efdb74@dd992",
+      "displayName": "",
+      "id": "dd992",
+      "name": "材质.001.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "84ffe": {
+      "importer": "gltf-material",
+      "uuid": "be593d30-3bf1-4396-9dd2-953975efdb74@84ffe",
+      "displayName": "",
+      "id": "84ffe",
+      "name": "墙纸.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7649f": {
+      "importer": "gltf-scene",
+      "uuid": "be593d30-3bf1-4396-9dd2-953975efdb74@7649f",
+      "displayName": "",
+      "id": "7649f",
+      "name": "red.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "db://assets/model/red/运动场-红色块.png"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "be593d30-3bf1-4396-9dd2-953975efdb74@fa0d6"
+      ],
+      "skeletons": [],
+      "textures": [
+        "be593d30-3bf1-4396-9dd2-953975efdb74@7d6ab"
+      ],
+      "materials": [
+        "be593d30-3bf1-4396-9dd2-953975efdb74@dd992",
+        "be593d30-3bf1-4396-9dd2-953975efdb74@84ffe"
+      ],
+      "scenes": [
+        "be593d30-3bf1-4396-9dd2-953975efdb74@7649f"
+      ]
+    }
+  }
+}

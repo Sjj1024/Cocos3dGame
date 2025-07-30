@@ -1,0 +1,143 @@
+{
+  "ver": "2.3.13",
+  "importer": "fbx",
+  "imported": true,
+  "uuid": "74382f57-98db-4c1a-88c0-5c864db150df",
+  "files": [],
+  "subMetas": {
+    "18049": {
+      "importer": "gltf-scene",
+      "uuid": "74382f57-98db-4c1a-88c0-5c864db150df@18049",
+      "displayName": "",
+      "id": "18049",
+      "name": "blue.prefab",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "fe48d": {
+      "importer": "gltf-mesh",
+      "uuid": "74382f57-98db-4c1a-88c0-5c864db150df@fe48d",
+      "displayName": "",
+      "id": "fe48d",
+      "name": "立方体.004.mesh",
+      "userData": {
+        "gltfIndex": 0,
+        "triangleCount": 12
+      },
+      "ver": "1.1.1",
+      "imported": true,
+      "files": [
+        ".bin",
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "7d6ab": {
+      "importer": "texture",
+      "uuid": "74382f57-98db-4c1a-88c0-5c864db150df@7d6ab",
+      "displayName": "",
+      "id": "7d6ab",
+      "name": "base_color_texture.texture",
+      "userData": {
+        "wrapModeS": "repeat",
+        "wrapModeT": "repeat",
+        "minfilter": "linear",
+        "magfilter": "linear",
+        "mipfilter": "none",
+        "anisotropy": 0,
+        "isUuid": false,
+        "imageUuidOrDatabaseUri": "db://assets/model/blue/运动场-蓝色块.png"
+      },
+      "ver": "1.0.22",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "22e2a": {
+      "importer": "gltf-material",
+      "uuid": "74382f57-98db-4c1a-88c0-5c864db150df@22e2a",
+      "displayName": "",
+      "id": "22e2a",
+      "name": "材质.material",
+      "userData": {
+        "gltfIndex": 0
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    },
+    "f94d1": {
+      "importer": "gltf-material",
+      "uuid": "74382f57-98db-4c1a-88c0-5c864db150df@f94d1",
+      "displayName": "",
+      "id": "f94d1",
+      "name": "幕布.material",
+      "userData": {
+        "gltfIndex": 1
+      },
+      "ver": "1.0.14",
+      "imported": true,
+      "files": [
+        ".json"
+      ],
+      "subMetas": {}
+    }
+  },
+  "userData": {
+    "imageMetas": [
+      {
+        "name": "base_color_texture",
+        "uri": "db://assets/model/blue/运动场-蓝色块.png"
+      }
+    ],
+    "fbx": {
+      "smartMaterialEnabled": true
+    },
+    "lods": {
+      "enable": false,
+      "hasBuiltinLOD": false,
+      "options": [
+        {
+          "screenRatio": 0.25,
+          "faceCount": 1
+        },
+        {
+          "screenRatio": 0.125,
+          "faceCount": 0.25
+        },
+        {
+          "screenRatio": 0.01,
+          "faceCount": 0.1
+        }
+      ]
+    },
+    "assetFinder": {
+      "meshes": [
+        "74382f57-98db-4c1a-88c0-5c864db150df@fe48d"
+      ],
+      "skeletons": [],
+      "textures": [
+        "74382f57-98db-4c1a-88c0-5c864db150df@7d6ab"
+      ],
+      "materials": [
+        "74382f57-98db-4c1a-88c0-5c864db150df@22e2a",
+        "74382f57-98db-4c1a-88c0-5c864db150df@f94d1"
+      ],
+      "scenes": [
+        "74382f57-98db-4c1a-88c0-5c864db150df@18049"
+      ]
+    }
+  }
+}
