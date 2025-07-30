@@ -266,7 +266,7 @@
       "__id__": 12
     },
     "debug": false,
-    "moveSpeed": 20,
+    "moveSpeed": 5,
     "rotateSpeed": 90,
     "jumpHeight": 2,
     "gravity": 9.8,
@@ -294,6 +294,7 @@
       "__id__": 0
     },
     "fileId": "19BWQFWUZfdbcHE3YTl/M0",
+    "instance": null,
     "targetOverrides": null
   }
 ]

@@ -56,7 +56,7 @@ export class main extends Component {
         const personNode = this.node.getChildByName('Person')
         playerNode.setParent(personNode)
         // 设置玩家位置
-        playerNode.setPosition(0, 1, 0)
+        playerNode.setPosition(0, 5, 0)
     }
 
     update(deltaTime: number) {}
