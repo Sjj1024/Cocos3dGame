@@ -2,12 +2,12 @@
   "ver": "1.1.50",
   "importer": "prefab",
   "imported": true,
-  "uuid": "09c2b312-530d-4ffc-82f4-354e220572ff",
+  "uuid": "551e7bb9-fc93-4bd1-8cc0-a46cd060e71b",
   "files": [
     ".json"
   ],
   "subMetas": {},
   "userData": {
-    "syncNodeName": "daiana"
+    "syncNodeName": "Name"
   }
 }

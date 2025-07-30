@@ -1,7 +1,7 @@
 [
   {
     "__type__": "cc.Prefab",
-    "_name": "daiana",
+    "_name": "rune",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_native": "",
@@ -13,7 +13,7 @@
   },
   {
     "__type__": "cc.Node",
-    "_name": "daiana",
+    "_name": "rune",
     "_objFlags": 0,
     "__editorExtras__": {},
     "_parent": null,
@@ -39,8 +39,8 @@
     },
     "_lpos": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 5,
+      "x": 4,
+      "y": 6,
       "z": 0
     },
     "_lrot": {
@@ -127,7 +127,7 @@
     },
     "_materials": [
       {
-        "__uuid__": "9fa600a9-afa8-403a-8a3d-903abee3c136@f276c",
+        "__uuid__": "9f2d7300-5d5a-422d-8049-ac35592bbcc2@bc7e6",
         "__expectedType__": "cc.Material"
       }
     ],
@@ -136,7 +136,7 @@
       "__id__": 5
     },
     "_mesh": {
-      "__uuid__": "9fa600a9-afa8-403a-8a3d-903abee3c136@d1fe4",
+      "__uuid__": "9f2d7300-5d5a-422d-8049-ac35592bbcc2@9f7f0",
       "__expectedType__": "cc.Mesh"
     },
     "_shadowCastingMode": 0,
@@ -152,7 +152,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "21o8FccSZcPazpEUMBe0Bu"
+    "fileId": "63nXlhuM1Rc5MSfraL3j9/"
   },
   {
     "__type__": "cc.ModelBakeSettings",
@@ -182,7 +182,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "d0VL0XTyNS7KZ3xKRUg5Im",
+    "fileId": "aaHIGU7mlYSY/s/Srz3mg1",
     "instance": null,
     "targetOverrides": null,
     "nestedPrefabInstanceRoots": null
@@ -214,7 +214,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "27PtSon6pEZYHwxzG8QatT"
+    "fileId": "00ZVUbP55OMbJYHuQtSVOE"
   },
   {
     "__type__": "cc.RigidBody",
@@ -243,15 +243,15 @@
     },
     "_angularFactor": {
       "__type__": "cc.Vec3",
-      "x": 0,
-      "y": 0,
-      "z": 0
+      "x": 1,
+      "y": 1,
+      "z": 1
     },
     "_id": ""
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "89ZfzfNlFOHa+8pQZp9BGR"
+    "fileId": "8fo4kPTppNF6zxJ2wH0FyZ"
   },
   {
     "__type__": "37c0f2ca8pOGK8KMEId27je",
@@ -266,7 +266,7 @@
       "__id__": 12
     },
     "debug": false,
-    "moveSpeed": 20,
+    "moveSpeed": 5,
     "rotateSpeed": 90,
     "jumpHeight": 2,
     "gravity": 9.8,
@@ -283,7 +283,7 @@
   },
   {
     "__type__": "cc.CompPrefabInfo",
-    "fileId": "60bqEW37NOJrsomBF1GO/C"
+    "fileId": "2aPl7sLuxGGbe2rbP/RtxL"
   },
   {
     "__type__": "cc.PrefabInfo",
@@ -293,7 +293,7 @@
     "asset": {
       "__id__": 0
     },
-    "fileId": "19BWQFWUZfdbcHE3YTl/M0",
+    "fileId": "e9LWtnEnpYLbDETGfgJhT1",
     "targetOverrides": null
   }
 ]

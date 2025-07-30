@@ -216,7 +216,7 @@ export class role extends Component {
 
         // 更新随机移动方向（保持归一化）
         Vec3.normalize(this._randomMoveDirection, reflection)
-        console.log('反弹后的移动方向', this._randomMoveDirection)
+        // console.log('反弹后的移动方向', this._randomMoveDirection)
     }
 
     // 手动控制
