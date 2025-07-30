@@ -1856,8 +1856,20 @@
     },
     "_enabled": true,
     "__prefab": null,
-    "playerPrefab": {
+    "dianaPrefab": {
       "__uuid__": "09c2b312-530d-4ffc-82f4-354e220572ff",
+      "__expectedType__": "cc.Prefab"
+    },
+    "lennPrefab": {
+      "__uuid__": "12e8af55-953d-414d-858f-78ece5e9ee77",
+      "__expectedType__": "cc.Prefab"
+    },
+    "ryanPrefab": {
+      "__uuid__": "9370ad54-9a0c-42be-814d-283a0bf8ce6b",
+      "__expectedType__": "cc.Prefab"
+    },
+    "victoriaPrefab": {
+      "__uuid__": "d0185ff4-1a7a-4b89-bf0b-237bfdea4bf1",
       "__expectedType__": "cc.Prefab"
     },
     "namePrefab": {

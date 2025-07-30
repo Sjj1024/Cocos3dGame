@@ -1,12 +1,36 @@
-import { _decorator, Camera, Component, EventKeyboard, input, Input, instantiate, KeyCode, Label, Node, Prefab } from 'cc'
+import {
+    _decorator,
+    Camera,
+    Component,
+    EventKeyboard,
+    input,
+    Input,
+    instantiate,
+    KeyCode,
+    Label,
+    Node,
+    Prefab,
+} from 'cc'
 import { follow } from './follow'
 const { ccclass, property } = _decorator
 
 @ccclass('main')
 export class main extends Component {
-    // 玩家预制体
+    // 戴安娜
     @property(Prefab)
-    public playerPrefab: Prefab = null
+    public dianaPrefab: Prefab = null
+
+    // 琳恩
+    @property(Prefab)
+    public lennPrefab: Prefab = null
+
+    // 瑞恩
+    @property(Prefab)
+    public ryanPrefab: Prefab = null
+
+    // 维多利亚
+    @property(Prefab)
+    public victoriaPrefab: Prefab = null
 
     // 玩家昵称预制体
     @property(Prefab)
@@ -35,7 +59,21 @@ export class main extends Component {
     // 创建玩家
     createPlayer() {
         // 创建玩家
-        const playerNode = instantiate(this.playerPrefab)
+        let playerNode = null
+        switch (this.playerIndex % 4) {
+            case 0:
+                playerNode = instantiate(this.dianaPrefab)
+                break
+            case 1:
+                playerNode = instantiate(this.lennPrefab)
+                break
+            case 2:
+                playerNode = instantiate(this.ryanPrefab)
+                break
+            case 3:
+                playerNode = instantiate(this.victoriaPrefab)
+                break
+        }
         // 创建玩家昵称
         const nameNode = instantiate(this.namePrefab)
         // 获取follow组件
