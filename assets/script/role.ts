@@ -157,7 +157,11 @@ export class role extends Component {
             const isWall = Math.abs(worleNormal.y) < 0.7
 
             if (isWall) {
-                console.log('墙壁碰撞---', this.nickName, this.score)
+                // console.log('墙壁碰撞---', this.nickName, this.score)
+                EventListener.dispatch(EventName.COLIDER_EVENT, {
+                    nickName: this.nickName,
+                    score: this.score,
+                })
                 this.score++
                 this._handleBounce(worleNormal)
             } else {

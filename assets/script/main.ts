@@ -86,6 +86,8 @@ export class main extends Component {
         const nickName = `1024小神${this.playerIndex}`
         const nameLabel = nameNode.getComponent(Label)
         nameLabel.string = nickName
+        // 注册玩家
+        EventListener.dispatch(EventName.REGIST_ROLE, { nickName, score: 0 })
         // 创建玩家
         let playerNode = null
         switch (this.playerIndex % 4) {
