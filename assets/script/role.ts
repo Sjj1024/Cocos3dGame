@@ -26,7 +26,11 @@ export class role extends Component {
     @property
     moveSpeed: number = 5
 
-    // 旋转速度 (度/秒)
+    // 自动控制旋转速度和移动速度比例
+    @property
+    autoRotateSpeed: number = 1.5
+
+    // 手动控制旋转速度 (度/秒)
     @property
     rotateSpeed: number = 90
 
@@ -43,8 +47,8 @@ export class role extends Component {
     manualControl: boolean = true
 
     // 计算自旋转角度
-    @property
-    rotationAmount: number = 10
+    // @property
+    // rotationAmount: number = 10
 
     // 礼物类别
     @property
@@ -326,12 +330,13 @@ export class role extends Component {
 
     // 应用自旋转
     private _applySpin(deltaTime: number) {
+        const rotationAmount = this.moveSpeed * this.autoRotateSpeed
         // 应用自旋转
         this.node.rotate(
             Quat.fromAxisAngle(
                 new Quat(),
                 Vec3.UNIT_Y,
-                toRadian(this.rotationAmount)
+                toRadian(rotationAmount)
             ),
             NodeSpace.WORLD
         )
