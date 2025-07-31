@@ -23,27 +23,7 @@ export class uidata extends Component {
         console.log('uidata start')
         EventListener.on(EventName.TIMER_START, this.timerStart, this)
         EventListener.on(EventName.TIMER_STOP, this.timerStop, this)
-        EventListener.on(EventName.FIRST_NAME, this.firstNameOn, this)
-        EventListener.on(EventName.SECOND_NAME, this.secondNameOn, this)
-        EventListener.on(EventName.THIRD_NAME, this.thirdNameOn, this)
-        EventListener.on(EventName.FOURTH_NAME, this.fourthNameOn, this)
         EventListener.on(EventName.TIMER_LABEL, this.timerLabelOn, this)
-    }
-
-    firstNameOn(data: any) {
-        console.log('firstName', name)
-    }
-
-    secondNameOn(data: any) {
-        console.log('secondName', data)
-    }
-
-    thirdNameOn(data: any) {
-        console.log('thirdName', data)
-    }
-
-    fourthNameOn(data: any) {
-        console.log('fourthName', data)
     }
 
     timerStart(data: any) {

@@ -22,6 +22,8 @@ export enum EventName {
     THIRD_NAME = 'THIRD_NAME',
     FOURTH_NAME = 'FOURTH_NAME',
     TIMER_LABEL = 'TIMER_LABEL',
+    REGIST_ROLE = 'REGIST_ROLE',
+    COLIDER_EVENT = 'COLIDER_EVENT',
 }
 
 @ccclass('EventListener')

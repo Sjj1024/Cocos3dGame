@@ -14,6 +14,7 @@ import {
 } from 'cc'
 import { follow } from './follow'
 import { EventListener, EventName } from './utils/EventListener'
+import { role } from './role'
 const { ccclass, property } = _decorator
 
 @ccclass('main')
@@ -76,6 +77,15 @@ export class main extends Component {
 
     // 创建玩家
     createPlayer() {
+        // 创建玩家昵称
+        const nameNode = instantiate(this.namePrefab)
+        // 获取follow组件
+        const followComp = nameNode.getComponent(follow)
+        // 设置玩家昵称
+        this.playerIndex++
+        const nickName = `1024小神${this.playerIndex}`
+        const nameLabel = nameNode.getComponent(Label)
+        nameLabel.string = nickName
         // 创建玩家
         let playerNode = null
         switch (this.playerIndex % 4) {
@@ -92,18 +102,12 @@ export class main extends Component {
                 playerNode = instantiate(this.victoriaPrefab)
                 break
         }
-        // 创建玩家昵称
-        const nameNode = instantiate(this.namePrefab)
-        // 获取follow组件
-        const followComp = nameNode.getComponent(follow)
+        // 设置昵称
+        playerNode.getComponent(role).setNickName(nickName)
         // 设置玩家节点
         followComp.setPlayerNode(playerNode)
         // 设置3D摄像机
         followComp.setMainCamera(this.mainCamera)
-        // 设置玩家昵称
-        this.playerIndex++
-        const nameLabel = nameNode.getComponent(Label)
-        nameLabel.string = `1024小神${this.playerIndex}`
         // 将玩家昵称添加到canvas节点
         const canvasNode = this.node.getChildByName('Canvas')
         nameNode.setParent(canvasNode)

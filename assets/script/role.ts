@@ -14,6 +14,7 @@ import {
     Vec3,
 } from 'cc'
 import { drawLineOriginDirLen } from './utils/DebugDraw'
+import { EventListener, EventName } from './utils/EventListener'
 const { ccclass, property } = _decorator
 
 @ccclass('role')
@@ -65,6 +66,14 @@ export class role extends Component {
     @property
     duration: number = 10
 
+    // 昵称
+    @property
+    private nickName: string = '原始玩家'
+
+    // 分数
+    @property
+    private score = 0
+
     // 是否自旋转
     private _isSpinning = false
     // 自旋转方向，1为顺时针，-1为逆时针
@@ -96,6 +105,7 @@ export class role extends Component {
     private _bounceCooldown = 0.001
     // 随机移动计时器，单位秒
     private _randomMoveTimer = 0
+
     // 反弹相关属性
     // 反弹系数 (0-1)，1表示完全弹性碰撞，0表示完全非弹性碰撞
     @_decorator.property({ range: [0, 1, 0.1] })
@@ -104,6 +114,11 @@ export class role extends Component {
     // 添加反弹最小速度阈值
     @_decorator.property({ tooltip: '反弹后最小速度阈值，避免过小的移动' })
     public minBounceSpeed = 0.5
+
+    // 设置昵称
+    public setNickName(nickName: string) {
+        this.nickName = nickName
+    }
 
     start() {
         // 设置键盘输入监听
@@ -142,13 +157,14 @@ export class role extends Component {
             const isWall = Math.abs(worleNormal.y) < 0.7
 
             if (isWall) {
-                // console.log('墙壁碰撞，法线方向:', worleNormal)
+                console.log('墙壁碰撞---', this.nickName, this.score)
+                this.score++
                 this._handleBounce(worleNormal)
             } else {
-                // console.log('非墙壁碰撞（可能是地面或天花板）')
+                console.log('非墙壁碰撞（可能是地面或天花板）')
             }
         } else {
-            // console.log('没有碰撞')
+            console.log('没有碰撞')
         }
     }
 
