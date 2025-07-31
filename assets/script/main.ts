@@ -3,6 +3,7 @@ import {
     Camera,
     Component,
     EventKeyboard,
+    game,
     input,
     Input,
     instantiate,
@@ -12,6 +13,7 @@ import {
     Prefab,
 } from 'cc'
 import { follow } from './follow'
+import { EventListener, EventName } from './utils/EventListener'
 const { ccclass, property } = _decorator
 
 @ccclass('main')
@@ -42,9 +44,25 @@ export class main extends Component {
     // 玩家序号
     private playerIndex = 0
 
+    // 计时器
+    @property
+    private timerSecond = 120
+
     start() {
         // 监听按键输入
         input.on(Input.EventType.KEY_UP, this.onKeyUp, this)
+        EventListener.dispatch(EventName.TIMER_START, this.timerSecond)
+        this.schedule(this.countDown, 1)
+    }
+
+    // 倒计时
+    countDown() {
+        this.timerSecond--
+        EventListener.dispatch(EventName.TIMER_LABEL, this.timerSecond)
+        if (this.timerSecond <= 0) {
+            this.timerSecond = 0
+            game.pause()
+        }
     }
 
     onKeyUp(event: EventKeyboard) {
