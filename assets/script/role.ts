@@ -78,6 +78,30 @@ export class role extends Component {
     @property
     private score = 0
 
+    // 不变向
+    @property
+    private isChangeDirection: boolean = false
+
+    // 加速
+    @property
+    private isLinearAcceleration: boolean = false
+
+    // 变大2倍
+    @property
+    private isScale2: boolean = false
+
+    // 变大3倍
+    @property
+    private isScale3: boolean = false
+
+    // 变大4倍
+    @property
+    private isScale4: boolean = false
+
+    // 给近景跟随
+    @property
+    private isFollow: boolean = false
+
     // 是否自旋转
     private _isSpinning = false
     // 自旋转方向，1为顺时针，-1为逆时针
@@ -365,22 +389,9 @@ export class role extends Component {
                 Color.RED
             )
         }
-
-        // // 计算位移（不修改原方向向量）
-        // const newPosition = this.node.getPosition()
-        // // 创建一个与随机方向向量相同的新向量（避免修改原方向向量导致原来的方向向量越来越小）
-        // const displacement = new Vec3(this._randomMoveDirection)
-        // // 将位移向量乘以速度和时间，得到位移量
-        // displacement.multiplyScalar(this.moveSpeed * deltaTime)
-        // Vec3.add(newPosition, newPosition, displacement)
-        // console.log('newPosition---->', newPosition)
-        // this.node.setPosition(newPosition)
-
-        // 调试信息
-        // console.log('Random Move Direction:', this._randomMoveDirection)
-        // console.log('Displacement:', displacement)
-        // console.log('New Position:', newPosition)
     }
+
+    // 收到礼物效果
 
     update(deltaTime: number) {
         if (this.manualControl) {

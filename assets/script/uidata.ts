@@ -21,7 +21,7 @@ export class uidata extends Component {
 
     private _roleList: { nickName: string; score: number }[] = [
         {
-            nickName: '1024小神',
+            nickName: '',
             score: 0,
         },
     ]
