@@ -3,13 +3,13 @@ const { ccclass, property } = _decorator
 
 @ccclass('follow')
 export class follow extends Component {
-    // @property({ type: Node })
+    @property({ type: Node })
     playerNode: Node = null
 
-    // @property({ type: Camera })
+    @property({ type: Camera })
     mainCamera: Camera = null // 3D摄像机
 
-    // @property({ type: Node })
+    @property({ type: Node })
     canvasNode: Node = null // Canvas节点
 
     // 头顶偏移
