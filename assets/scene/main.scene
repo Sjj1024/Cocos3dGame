@@ -1310,7 +1310,7 @@
     "propertyPath": [
       "nickName"
     ],
-    "value": "原始玩家1"
+    "value": "黛安娜"
   },
   {
     "__type__": "cc.TargetInfo",
@@ -1440,7 +1440,7 @@
     "propertyPath": [
       "nickName"
     ],
-    "value": "原始玩家2"
+    "value": "琳恩"
   },
   {
     "__type__": "cc.TargetInfo",
@@ -1570,7 +1570,7 @@
     "propertyPath": [
       "nickName"
     ],
-    "value": "原始玩家3"
+    "value": "瑞恩"
   },
   {
     "__type__": "cc.TargetInfo",
@@ -1700,7 +1700,7 @@
     "propertyPath": [
       "nickName"
     ],
-    "value": "原始玩家4"
+    "value": "维多利亚"
   },
   {
     "__type__": "cc.TargetInfo",
