@@ -40,7 +40,7 @@ export class main extends Component {
     public namePrefab: Prefab = null
 
     @property({ type: Camera })
-    mainCamera: Camera = null // 3D摄像机
+    mainCamera: Camera = null
 
     // 玩家序号
     private playerIndex = 0
