@@ -51,7 +51,7 @@ export class main extends Component {
 
     // 玩家昵称列表
     private nickNameList = [
-        '筷嚛煶堻',
+        '筷嚛',
         '团子',
         '袜子激推',
         '天赋极高',
