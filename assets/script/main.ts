@@ -159,6 +159,9 @@ export class main extends Component {
         'Daniel',
     ]
 
+    // 昵称和玩家节点映射
+    private nickNameToPlayerNode = new Map<string, Node>()
+
     start() {
         // 监听按键输入
         input.on(Input.EventType.KEY_UP, this.onKeyUp, this)
@@ -241,6 +244,48 @@ export class main extends Component {
             .start()
     }
 
+    // 随机让某个玩家节点变大
+    scalePlayer() {
+        const randomNickName =
+            this.nickNameToPlayerNode.keys[
+                Math.floor(
+                    Math.random() * this.nickNameToPlayerNode.keys.length
+                )
+            ]
+        const playerNode: any = this.nickNameToPlayerNode.get(randomNickName)
+        if (playerNode) {
+            tween(playerNode)
+                .to(1, { scale: new Vec3(3, 3, 3) })
+                .start()
+        }
+        // tween(playerNode)
+        //     .to(1, { scale: new Vec3(scaleNumber, scaleNumber, scaleNumber) })
+        //     .start()
+    }
+
+    // 直线运动
+    linearMove() {
+        console.log('linearMove')
+    }
+
+    // 直线加速
+    linearAccelerate() {
+        console.log('linearAccelerate')
+        // tween(this.node)
+        //     .to(1, { position: new Vec3(10, 10, 10) })
+        //     .start()
+    }
+
+    // 变大加速
+    scaleAccelerate() {
+        console.log('scaleAccelerate')
+    }
+
+    // 变大加速，给近景
+    scaleAccelerateNear() {
+        console.log('scaleAccelerateNear')
+    }
+
     // 创建玩家
     createPlayer() {
         // 创建玩家昵称
@@ -286,6 +331,13 @@ export class main extends Component {
         playerNode.setParent(personNode)
         // 设置玩家位置
         playerNode.setPosition(0, 5, 0)
+
+        // 将玩家昵称和玩家节点映射
+        this.nickNameToPlayerNode.set(nickName, playerNode)
+
+        // tween(playerNode)
+        //     .to(1, { scale: new Vec3(3, 3, 3) })
+        //     .start()
     }
 
     update(deltaTime: number) {}
