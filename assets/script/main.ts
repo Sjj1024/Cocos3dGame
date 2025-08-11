@@ -165,6 +165,9 @@ export class main extends Component {
     // 选中的玩家
     private selectedPlayer: any = null
 
+    // 近景
+    private nearCamera: boolean = false
+
     start() {
         // 监听按键输入
         input.on(Input.EventType.KEY_UP, this.onKeyUp, this)
@@ -292,6 +295,14 @@ export class main extends Component {
     // 变大加速，给近景
     scaleAccelerateNear() {
         console.log('scaleAccelerateNear')
+        this.nearCamera = true
+        if (this.selectedPlayer) {
+            // this.mainCamera.node.setParent(this.selectedPlayer)
+            // tween(this.mainCamera)
+            //     .to(1.0, { fov: 30 }) // 1秒内将 fov 缓动到 45
+            //     .start()
+        }
+        // this.mainCamera.fov = 45
     }
 
     // 随机选人
@@ -378,5 +389,12 @@ export class main extends Component {
         //     .start()
     }
 
-    update(deltaTime: number) {}
+    update(deltaTime: number) {
+        if (this.selectedPlayer && this.nearCamera) {
+            // console.log('selectedPlayer', this.selectedPlayer.position)
+            const playerZ = this.selectedPlayer.position.z
+            this.mainCamera.node.setPosition(50, 30, playerZ)
+            // this.mainCamera.fov = 30
+        }
+    }
 }
