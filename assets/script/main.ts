@@ -9,13 +9,22 @@ import {
     instantiate,
     KeyCode,
     Label,
-    Node,
     Prefab,
+    Quat,
+    tween,
+    Vec3,
 } from 'cc'
 import { follow } from './follow'
 import { EventListener, EventName } from './utils/EventListener'
 import { role } from './role'
 const { ccclass, property } = _decorator
+
+/**
+ * 正视角相机位置：(50,30,0)，旋转角度（-30,90,0）
+ * 左侧视角相机位置：(0,30,40)，旋转角度（-30,0,0）
+ * 右侧视角相机位置：(0,30,-40)，旋转角度（-30,180,0）
+ * 俯视角相机位置：(0,36,0)，旋转角度（-90,0,0）
+ */
 
 @ccclass('main')
 export class main extends Component {
@@ -174,6 +183,62 @@ export class main extends Component {
                 this.createPlayer()
                 break
         }
+    }
+
+    // 切换到正视角
+    switchToFrontView() {
+        // this.mainCamera.node.setPosition(50, 30, 0)
+        // this.mainCamera.node.setRotationFromEuler(-30, 90, 0)
+        const quat = new Quat()
+        Quat.fromEuler(quat, -30, 90, 0)
+        tween(this.mainCamera.node)
+            .to(0.5, {
+                position: new Vec3(50, 30, 0),
+                rotation: quat,
+            })
+            .start()
+    }
+
+    // 切换到左侧视角
+    switchToLeftView() {
+        // this.mainCamera.node.setPosition(0, 30, 40)
+        // this.mainCamera.node.setRotationFromEuler(-30, 0, 0)
+        const quat = new Quat()
+        Quat.fromEuler(quat, -30, 0, 0)
+        tween(this.mainCamera.node)
+            .to(0.5, {
+                position: new Vec3(0, 30, 40),
+                rotation: quat,
+            })
+            .start()
+    }
+
+    // 切换到右侧视角
+    switchToRightView() {
+        // this.mainCamera.node.setPosition(0, 30, -40)
+        // this.mainCamera.node.setRotationFromEuler(-30, 180, 0)
+        const quat = new Quat()
+        Quat.fromEuler(quat, -30, 180, 0)
+        tween(this.mainCamera.node)
+            .to(0.5, {
+                position: new Vec3(0, 30, -40),
+                rotation: quat,
+            })
+            .start()
+    }
+
+    // 切换到俯视角
+    switchToTopView() {
+        // this.mainCamera.node.setPosition(0, 36, 0)
+        // this.mainCamera.node.setRotationFromEuler(-90, 0, 0)
+        const quat = new Quat()
+        Quat.fromEuler(quat, -90, 0, 0)
+        tween(this.mainCamera.node)
+            .to(0.5, {
+                position: new Vec3(0, 36, 0),
+                rotation: quat,
+            })
+            .start()
     }
 
     // 创建玩家
