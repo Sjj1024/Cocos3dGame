@@ -27,7 +27,7 @@ export class uidata extends Component {
     ]
 
     start() {
-        console.log('uidata start')
+        // console.log('uidata start')
         EventListener.on(EventName.TIMER_START, this.timerStart, this)
         EventListener.on(EventName.TIMER_STOP, this.timerStop, this)
         EventListener.on(EventName.TIMER_LABEL, this.timerLabelOn, this)
@@ -36,7 +36,7 @@ export class uidata extends Component {
     }
 
     registRole(data: any) {
-        console.log('registRole', data)
+        // console.log('registRole', data)
         // 如果昵称已存在，则更新分数
         const existRole = this._roleList.find(
             (item) => item.nickName === data.nickName
@@ -51,7 +51,7 @@ export class uidata extends Component {
 
     // COLIDER_EVENT
     coliderEvent(data: any) {
-        console.log('coliderEvent', data)
+        // console.log('coliderEvent', data)
         const existRole = this._roleList.find(
             (item) => item.nickName === data.nickName
         )
@@ -64,12 +64,12 @@ export class uidata extends Component {
     }
 
     timerStart(data: any) {
-        console.log('timerStart', data)
+        // console.log('timerStart', data)
         this.timerLabel.string = data.toString() + 's'
     }
 
     timerStop(data: any) {
-        console.log('timerStop')
+        // console.log('timerStop')
         this.timerLabel.string = '0s'
     }
 
@@ -82,7 +82,7 @@ export class uidata extends Component {
         // 排序,找出排名前四的用户和分数
         const sortedList = this._roleList.sort((a, b) => b.score - a.score)
         // 更新排名列表
-        console.log('sortedList', sortedList)
+        // console.log('sortedList', sortedList)
         if (sortedList[0]) {
              this.firstName.string =
             sortedList[0].nickName + '(' + sortedList[0].score + ')'

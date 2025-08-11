@@ -5536,7 +5536,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "linearAccelerate",
     "customEventData": ""
   },
   {
@@ -5862,7 +5862,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "scaleAccelerateNear",
     "customEventData": ""
   },
   {
@@ -6188,7 +6188,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "scaleAccelerate",
     "customEventData": ""
   },
   {
@@ -6514,7 +6514,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "linearMove",
     "customEventData": ""
   },
   {
@@ -6662,7 +6662,7 @@
       "b": 0,
       "a": 255
     },
-    "_string": "随机选中",
+    "_string": "随机选人",
     "_horizontalAlign": 1,
     "_verticalAlign": 1,
     "_actualFontSize": 22,
@@ -6840,7 +6840,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "randomSelectPlayer",
     "customEventData": ""
   },
   {
@@ -7166,7 +7166,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "pause",
     "customEventData": ""
   },
   {
@@ -7492,7 +7492,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "addPlayer",
     "customEventData": ""
   },
   {
@@ -7818,7 +7818,7 @@
     },
     "component": "",
     "_componentId": "b28e8F7yClMMJuIotELC+fu",
-    "handler": "switchToRightView",
+    "handler": "endGame",
     "customEventData": ""
   },
   {

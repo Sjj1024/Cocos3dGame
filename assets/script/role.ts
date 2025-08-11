@@ -193,7 +193,7 @@ export class role extends Component {
                 this.score++
                 this._handleBounce(worleNormal)
             } else {
-                console.log('非墙壁碰撞（可能是地面或天花板）')
+                // console.log('非墙壁碰撞（可能是地面或天花板）')
             }
         } else {
             console.log('没有碰撞')

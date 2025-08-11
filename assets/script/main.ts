@@ -162,6 +162,9 @@ export class main extends Component {
     // 昵称和玩家节点映射
     private nickNameToPlayerNode = new Map<string, Node>()
 
+    // 选中的玩家
+    private selectedPlayer: any = null
+
     start() {
         // 监听按键输入
         input.on(Input.EventType.KEY_UP, this.onKeyUp, this)
@@ -279,11 +282,46 @@ export class main extends Component {
     // 变大加速
     scaleAccelerate() {
         console.log('scaleAccelerate')
+        if (this.selectedPlayer) {
+            tween(this.selectedPlayer)
+                .to(1, { scale: new Vec3(4, 4, 4) })
+                .start()
+        }
     }
 
     // 变大加速，给近景
     scaleAccelerateNear() {
         console.log('scaleAccelerateNear')
+    }
+
+    // 随机选人
+    randomSelectPlayer() {
+        const nickNames = this.nickNameToPlayerNode.keys()
+        // 1. 将 Map 的 key 迭代器转换为数组
+        const keysArray = Array.from(nickNames)
+        // 2. 生成一个随机索引
+        const randomIndex = Math.floor(Math.random() * keysArray.length)
+        // 3. 获取随机的 key
+        const randomKey = keysArray[randomIndex]
+        console.log('randomSelectPlayer', randomKey)
+        this.selectedPlayer = this.nickNameToPlayerNode.get(randomKey)
+    }
+
+    // 暂停
+    pause() {
+        // game.pause()
+        console.log('pause')
+    }
+
+    // 加人
+    addPlayer() {
+        console.log('addPlayer')
+        this.createPlayer()
+    }
+
+    // 结束
+    endGame() {
+        console.log('endGame')
     }
 
     // 创建玩家
