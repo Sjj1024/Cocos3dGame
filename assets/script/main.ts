@@ -274,9 +274,9 @@ export class main extends Component {
     // 直线加速
     linearAccelerate() {
         console.log('linearAccelerate')
-        // tween(this.node)
-        //     .to(1, { position: new Vec3(10, 10, 10) })
-        //     .start()
+        if (this.selectedPlayer) {
+            this.selectedPlayer.getComponent(role).setSpeed(20)
+        }
     }
 
     // 变大加速

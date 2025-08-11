@@ -158,9 +158,9 @@ class WebSocketCli {
 }
 
 // 全局唯一websocket对象
-const baseUrl = 'wss://www.fai-link.com/dy/ws'
-const wsUrl = `${baseUrl}?room_id=1342348234029340923`
-const wsInstance = new WebSocketCli(wsUrl)
+// const baseUrl = 'wss://www.fai-link.com/dy/ws'
+// const wsUrl = `${baseUrl}?room_id=1342348234029340923`
+// const wsInstance = new WebSocketCli(wsUrl)
 
-// 导出对象
-export default wsInstance
+// // 导出对象
+// export default wsInstance

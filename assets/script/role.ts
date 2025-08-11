@@ -391,8 +391,12 @@ export class role extends Component {
         }
     }
 
-    // 收到礼物效果
+    // 设置速度
+    public setSpeed(speed: number) {
+        this.moveSpeed = speed
+    }
 
+    // 更新函数
     update(deltaTime: number) {
         if (this.manualControl) {
             this._manualControl(deltaTime)
