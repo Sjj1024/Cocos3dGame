@@ -295,14 +295,39 @@ export class main extends Component {
     // 变大加速，给近景
     scaleAccelerateNear() {
         console.log('scaleAccelerateNear')
-        this.nearCamera = true
         if (this.selectedPlayer) {
             // this.mainCamera.node.setParent(this.selectedPlayer)
-            // tween(this.mainCamera)
-            //     .to(1.0, { fov: 30 }) // 1秒内将 fov 缓动到 45
-            //     .start()
+            tween(this.mainCamera)
+                .to(1.0, { fov: 30 }) // 1秒内将 fov 缓动到 45
+                .start()
+            const playerZ = this.selectedPlayer.position.z
+            tween(this.mainCamera.node)
+                .to(1.0, {
+                    position: new Vec3(50, 30, playerZ),
+                })
+                .call(() => {
+                    this.nearCamera = true
+                })
+                .start()
         }
         // this.mainCamera.fov = 45
+    }
+
+    // 远景
+    farCamera() {
+        console.log('farCamera')
+        this.nearCamera = false
+        if (this.selectedPlayer) {
+            // this.mainCamera.node.setParent(this.selectedPlayer)
+            tween(this.mainCamera)
+                .to(1.0, { fov: 80 }) // 1秒内将 fov 缓动到 45
+                .start()
+            tween(this.mainCamera.node)
+                .to(1.0, {
+                    position: new Vec3(50, 30, 0),
+                })
+                .start()
+        }
     }
 
     // 随机选人

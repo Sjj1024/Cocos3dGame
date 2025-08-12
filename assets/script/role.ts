@@ -82,26 +82,6 @@ export class role extends Component {
     @property
     private isChangeDirection: boolean = false
 
-    // 加速
-    @property
-    private isLinearAcceleration: boolean = false
-
-    // 变大2倍
-    @property
-    private isScale2: boolean = false
-
-    // 变大3倍
-    @property
-    private isScale3: boolean = false
-
-    // 变大4倍
-    @property
-    private isScale4: boolean = false
-
-    // 给近景跟随
-    @property
-    private isFollow: boolean = false
-
     // 是否自旋转
     private _isSpinning = false
     // 自旋转方向，1为顺时针，-1为逆时针
