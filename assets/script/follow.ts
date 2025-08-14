@@ -1,4 +1,12 @@
-import { _decorator, Camera, Component, Node, UITransform, Vec3 } from 'cc'
+import {
+    _decorator,
+    Camera,
+    Component,
+    Node,
+    UITransform,
+    Vec3,
+    view,
+} from 'cc'
 const { ccclass, property } = _decorator
 
 @ccclass('follow')
@@ -15,6 +23,11 @@ export class follow extends Component {
     // 头顶偏移
     private _offset: Vec3 = new Vec3(0, 2, 0)
 
+    // 屏幕适配相关
+    private _designResolution = new Vec3()
+    private _screenResolution = new Vec3()
+    private _scaleRatio = new Vec3(1, 1, 1)
+
     // 动态设置玩家节点
     public setPlayerNode(playerNode: Node) {
         if (this.playerNode) return
@@ -29,30 +42,56 @@ export class follow extends Component {
 
     start() {
         this.canvasNode = this.node.parent
+        // 获取设计分辨率
+        const canvasTrans = this.canvasNode.getComponent(UITransform)
+        this._designResolution.set(canvasTrans.width, canvasTrans.height, 0)
+
+        // 初始计算屏幕适配比例
+        this.calculateScreenRatio()
     }
 
-    // update
     update(dt: number) {
         if (!this.playerNode || !this.mainCamera || !this.canvasNode) return
 
-        // 1. 计算头顶世界坐标
+        // 1. 获取头顶世界坐标
         const headWorldPos = this.playerNode
             .getWorldPosition()
             .add(this._offset)
 
-        // 2. 世界坐标转屏幕坐标
+        // 2. 世界坐标 -> 屏幕坐标
         const screenPos = new Vec3()
         this.mainCamera.worldToScreen(headWorldPos, screenPos)
-        // console.log('screenPos', screenPos)
 
-        // 3. 屏幕坐标转UI坐标
-        const canvasUITrans = this.canvasNode.getComponent(UITransform)
-        const widgetPos = canvasUITrans.convertToNodeSpaceAR(
-            new Vec3(screenPos.x, screenPos.y, 0)
+        // 3. 获取屏幕大小和 Canvas 大小
+        const canvasUITrans = this.canvasNode.getComponent(UITransform)!
+        const designSize = canvasUITrans.contentSize
+        const screenSize = view.getVisibleSize()
+
+        // 4. 把屏幕坐标映射到 Canvas 逻辑坐标
+        const uiPos = new Vec3(
+            (screenPos.x / screenSize.width) * designSize.width -
+                designSize.width / 2,
+            (screenPos.y / screenSize.height) * designSize.height -
+                designSize.height / 2,
+            0
         )
 
-        // console.log('widgetPos', widgetPos)
-        // 4. 设置UI节点位置
-        this.node.setPosition(widgetPos)
+        // 5. 设置 UI 位置
+        this.node.setPosition(uiPos)
+    }
+
+    // 计算屏幕适配比例
+    private calculateScreenRatio() {
+        const visibleSize = view.getVisibleSize()
+        this._screenResolution.set(visibleSize.width, visibleSize.height, 0)
+
+        // 计算宽高比例
+        this._scaleRatio.x = this._screenResolution.x / this._designResolution.x
+        this._scaleRatio.y = this._screenResolution.y / this._designResolution.y
+    }
+
+    // 当屏幕尺寸变化时重新计算比例
+    onResize() {
+        this.calculateScreenRatio()
     }
 }
