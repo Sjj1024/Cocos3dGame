@@ -11,8 +11,10 @@ import {
     Label,
     Prefab,
     Quat,
+    ResolutionPolicy,
     tween,
     Vec3,
+    view,
 } from 'cc'
 import { follow } from './follow'
 import { EventListener, EventName } from './utils/EventListener'
@@ -173,6 +175,9 @@ export class main extends Component {
         input.on(Input.EventType.KEY_UP, this.onKeyUp, this)
         EventListener.dispatch(EventName.TIMER_START, this.timerSecond)
         this.schedule(this.countDown, 1)
+        // view.setDesignResolutionSize(720, 1280, ResolutionPolicy.FIXED_HEIGHT)
+        // 或
+        // view.setDesignResolutionSize(720, 1280, ResolutionPolicy.SHOW_ALL)
     }
 
     // 倒计时
@@ -264,9 +269,6 @@ export class main extends Component {
                 .to(1, { scale: new Vec3(3, 3, 3) })
                 .start()
         }
-        // tween(playerNode)
-        //     .to(1, { scale: new Vec3(scaleNumber, scaleNumber, scaleNumber) })
-        //     .start()
     }
 
     // 直线运动
