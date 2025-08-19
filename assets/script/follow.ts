@@ -58,17 +58,25 @@ export class follow extends Component {
         this.playerNode.getWorldPosition(headWorldPos)
         headWorldPos.add(this._offset)
 
-        // 2. 世界坐标 -> 屏幕坐标
+        // 2. 世界坐标 -> 屏幕坐标（物理像素）
         const screenPos = new Vec3()
         this.mainCamera.worldToScreen(headWorldPos, screenPos)
 
-        // 3. 屏幕坐标 -> Canvas的本地坐标
-        // 注意：screenPos.y 需要转为UI世界坐标，Y轴方向有差异
-        // 引擎3.x, 直接用convertToNodeSpaceAR即可
-        const canvasTransform = this.canvasNode.getComponent(UITransform)!
-        const uiPos = canvasTransform.convertToNodeSpaceAR(screenPos)
+        // 3. 屏幕坐标 转换到设计分辨率坐标
+        const visibleSize = view.getVisibleSize()
+        const canvasTrans = this.canvasNode.getComponent(UITransform)!
 
-        // 4. 设置UI节点位置
+        const designX = (screenPos.x / visibleSize.width) * canvasTrans.width
+        const designY = (screenPos.y / visibleSize.height) * canvasTrans.height
+
+        // 4. 把设计分辨率坐标转换为 UI 本地坐标
+        const uiPos = new Vec3(
+            designX - canvasTrans.width / 2,
+            designY - canvasTrans.height / 2,
+            0
+        )
+
+        // 5. 设置UI节点位置
         this.node.setPosition(uiPos)
     }
 
