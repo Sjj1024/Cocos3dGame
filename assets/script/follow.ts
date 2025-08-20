@@ -52,7 +52,6 @@ export class follow extends Component {
 
     update(dt: number) {
         if (!this.playerNode || !this.mainCamera || !this.canvasNode) return
-
         // 1. 获取头顶世界坐标
         const headWorldPos = new Vec3()
         this.playerNode.getWorldPosition(headWorldPos)
@@ -75,7 +74,6 @@ export class follow extends Component {
             designY - canvasTrans.height / 2,
             0
         )
-
         // 5. 设置UI节点位置
         this.node.setPosition(uiPos)
     }
