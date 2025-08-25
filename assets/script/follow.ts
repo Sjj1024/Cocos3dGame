@@ -15,7 +15,7 @@ export class follow extends Component {
     playerNode: Node = null
 
     @property({ type: Camera })
-    mainCamera: Camera = null // 3D摄像机
+    mainCamera: Camera = null
 
     @property({ type: Node })
     canvasNode: Node = null // Canvas节点
